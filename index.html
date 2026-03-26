@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Javascript</title>
+    </head>
+    <body>
+        <h2>Registration form</h2>
+        <form onsubmit ="return checkform()">
+            Name: <input type="text" id="name"> <br><br>
+            Mobile No: <input type="text" id="mobile"><br><br>
+            Password:<input type="password" id="password"><br><br>
+            Comfirm password: <input type="password" id="cpassword"><br><br>
+            <input type="submit" value="submit">
+
+                        </form>
+                <script>
+
+                           function checkform() {
+                                let name = document.getElementById("name").value;
+                                let mobile = document.getElementById("mobile").value;
+                                let pass = document.getElementById("password").value;
+                               let cpass = document.getElementById("cpassword").value;
+                            
+                            if (name=="" || mobile== "" || pass== "" || cpass== "") {
+                            alert("All field are required");
+                                return false;
+                            }
+                            if (mobile.length !== 10) {
+                            alert("Mobile number must be 10 digits");
+                                return false;
+                            }
+
+                            if(pass !== cpass) {
+                            alert("Password not match");
+                                return false;
+                            }
+
+                           alert("Form submitted successfully");
+                        
+                           return true;
+                     }
+
+                 </script>
+    </body>
+</html>
